@@ -1,0 +1,179 @@
+/* Ramble Hotel Rooms & Suites Gallery Styles */
+.dynamic-gallery-ramble {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.filterbox {
+  margin: 2em 0 2em 0;
+  text-align: center;
+}
+.filterbox .ul-reset {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+  gap: 2em;
+}
+.filterbox__item {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.5em 1.5em;
+  border-radius: 30px;
+  background: #f5f5f5;
+  transition: background 0.2s, color 0.2s;
+  color: #333;
+}
+.filterbox__item--active,
+.filterbox__item:hover {
+  background: #bfa46a;
+  color: #fff;
+}
+.filterbox__item h3 {
+  margin: 0;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.boxxy-large.filterbox-isotope {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: center;
+}
+.boxxy-large__item {
+  width: 32%;
+  min-width: 300px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  margin-bottom: 2em;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s;
+}
+.boxxy-large__item:hover {
+  box-shadow: 0 6px 32px rgba(0,0,0,0.16);
+}
+.boxxy-large__imgbox {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 66%; /* 3:2 aspect ratio */
+  overflow: hidden;
+}
+.boxxy-large__imgbox-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: none;
+}
+.boxxy-large__imgbox-bg.desktop {
+  display: block;
+}
+@media (max-width: 767px) {
+  .boxxy-large__item {
+    width: 100%;
+    min-width: 0;
+  }
+  .boxxy-large__imgbox-bg.desktop {
+    display: none;
+  }
+  .boxxy-large__imgbox-bg.mobile {
+    display: block;
+  }
+}
+.boxxy-large__imgbox-bg img {
+  display: none;
+}
+.boxxy-large__titlebox {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.45);
+  margin: 0;
+  padding: 0.5em 0;
+  z-index: 2;
+  text-align: center;
+}
+.boxxy-large__title h4 {
+  color: #fff;
+  margin: 0;
+  font-size: 1.5em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* Responsive grid */
+@media (max-width: 1024px) {
+  .boxxy-large__item { width: 48%; }
+}
+@media (max-width: 767px) {
+  .boxxy-large__item { width: 100%; }
+}
+
+/* Custom Gallery Filter Buttons Styling */
+.dynamic-gallery-ramble .filterbox {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.dynamic-gallery-ramble .filterbox .ul-reset {
+  display: flex;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dynamic-gallery-ramble .filterbox__item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 8px 24px;
+  border-radius: 24px;
+  background: transparent;
+  color: #F1F0E6;
+  font-family: "Playfair Display", Sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  transition: background 0.3s, color 0.3s;
+  border: 1px solid transparent;
+  margin: 0;
+}
+
+.dynamic-gallery-ramble .filterbox__item span h3 {
+  margin: 0;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
+}
+
+.dynamic-gallery-ramble .filterbox__item--active,
+.dynamic-gallery-ramble .filterbox__item:hover {
+  background: #F1F0E6;
+  color: #232323;
+  border-color: #F1F0E6;
+}
+
+.dynamic-gallery-ramble .filterbox__item--active,
+.dynamic-gallery-ramble .filterbox__item:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+@media (max-width: 600px) {
+  .dynamic-gallery-ramble .filterbox .ul-reset {
+    gap: 8px;
+  }
+  .dynamic-gallery-ramble .filterbox__item {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+} 
