@@ -11,8 +11,12 @@ if (!defined('ABSPATH')) exit;
 
 // Register Widget
 function register_dynamic_gallery_widget($widgets_manager) {
-    require_once(__DIR__ . '/widgets/dynamic-gallery.php');
-    $widgets_manager->register(new \Dynamic_Gallery_Widget());
+    try {
+        require_once(__DIR__ . '/widgets/dynamic-gallery.php');
+        $widgets_manager->register(new \Dynamic_Gallery_Widget());
+    } catch (Throwable $e) {
+        error_log('Dynamic Gallery Widget registration error: ' . $e->getMessage());
+    }
 }
 add_action('elementor/widgets/register', 'register_dynamic_gallery_widget');
 
